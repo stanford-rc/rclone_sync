@@ -70,7 +70,7 @@ prerequisites in your compute environment:
   `rclone/1.39`.  If you use different modules for rclone, you will need to
   change the modules that are loaded.
 
-* **Google Group**.  You will need a Google Group which contains all of your
+* **Google Groups**.  You will need a Google Group which contains all of your
   lab members (or, at least, the lab members who will be using this tool).  At
   Stanford, you should use [Workgroup
   Manager](https://uit.stanford.edu/service/workgroup) to create a workgroup,
@@ -92,7 +92,7 @@ This is done by executing an rclone setup process.
 the lab user to authenticate with Google, so that rclone may perform actions on
 the user's behalf.
 
-The person in charge of this tool will need to choose a _remote name_, a
+The person in charge of this tool will need to choose a <u>remote name</u>, a
 short identifier to represent the Google Team Drive.  _All lab members will
 need to set up an rclone remote with this name_.
 
@@ -104,10 +104,10 @@ the Quake Lab learn how to set up rclone:
 
 ## Script Customization
 
-Once rclone is set up, the tool needs to be customized to your environment.
+Once rclone is set up, this tool needs to be customized to your environment.
 
 **Take note** that this tool executes `rclone sync`, which will delete files
-on Google Drive that are not present on the local filesystem.  So, this is _not
+on Google Drive that are not present on the local filesystem.  _This is not
 the same as a backup_!  The closest equivalent is to use `rclone copy`, which
 does not delete remote files.
 
@@ -174,13 +174,17 @@ Sherlock Backupss/
       ... files ...
 ```
 
+That ends the normally-required customization.
+
 ## Test!
 
 Before you distribute the tool to users, test it yourself:  Run the script at
 least once, and let it run a few days, to make sure that it is able to resubmit
 itself.  It will help if you can run this on a directory with lots of files.
 
-Once you are done testing, be sure to `scancel` the next day's sync jobs.
+Once you are done testing, be sure to `scancel` the next day's sync jobs.  If
+you move files around as part of deployment, the batch jobs will still be
+pointing to the old file locations.
 
 ## Deploy!
 
@@ -194,8 +198,8 @@ directories should be synced.
 # Copyright, Licensing, and Support
 
 This code is © 2018 The Board of Trustees of the Leland Stanford Junion
-University, and is released under the [LICENSE](GNU General Public License,
-Version 3).
+University, and is released under the [GNU General Public License,
+Version 3](LICENSE).
 
 This was created by the [Stanford Research Comptuing
 Center](https://srcc.stanford.edu) for the [Quake
